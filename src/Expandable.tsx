@@ -49,7 +49,7 @@ const Expandable = ({
   const measureContent = () => {
     'worklet';
     const measured = measure(contentRef);
-    if (measured && measured.height > 0) {
+    if (measured && measured.height > 0 && measured.height !== measuredHeight.value) {
       setMeasuredHeight(measuredHeight, measured.height);
     }
   };
@@ -89,9 +89,7 @@ const Expandable = ({
       <Animated.View
         ref={contentRef}
         onLayout={() => {
-          if (measuredHeight.value === 0) {
-            scheduleOnUI(measureContent);
-          }
+          scheduleOnUI(measureContent);
         }}
         style={{ position: 'absolute', width: '100%' }}
       >
