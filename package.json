@@ -101,12 +101,11 @@
       "tagName": "v${version}"
     },
     "npm": {
-      "publish": true,
-      "tag": "beta"
+      "publish": true
     },
     "github": {
       "release": true,
-      "preRelease": true
+      "preRelease": false
     },
     "plugins": {
       "@release-it/conventional-changelog": {
